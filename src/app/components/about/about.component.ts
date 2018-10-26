@@ -44,7 +44,7 @@ export class AboutComponent implements OnInit {
           ],
           drivers:[
             {drivercontact:2103458790,drivername:"Watson"},
-            {drivercontact:2138769087g,drivername:"Heather"}            
+            {drivercontact:2138769087,drivername:"Heather"}            
           ]
         }
     }
