@@ -34,13 +34,13 @@ export class AboutComponent implements OnInit {
       bus1:
         {
           busNumber: "bus002",
-          startLocation: "location336",
-          endLocation: "location366",
+          startLocation: "location389",
+          endLocation: "location377",
           stopaje:[
-            {location:"location336"},
-            {location:"location346"},
-            {location:"location356"},
-            {location:"location366"}
+            {location:"location377"},
+            {location:"location347"},
+            {location:"location345"},
+            {location:"location378"}
           ],
           drivers:[
             {drivercontact:2103458790,drivername:"Watson"},
