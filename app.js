@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var models = require('./models');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -36,6 +37,21 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+models.sequelize.sync({}).then(() => {
+  
+  // Create a test user
+  models.bus.create({
+    busNumber: 8675309,
+    driver: 'Busyrich'
+  }).then(() => {
+    //After the user is created,
+    //get all the users and log the data returned
+    models.bus.findAll().then(users => {
+      console.log(users); //We only added one so we log index 0
+    });
+  });
 });
 
 module.exports = app;
