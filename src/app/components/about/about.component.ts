@@ -10,7 +10,7 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
   testproperty: string = "welcome to about page";
-  // httpClient.get, to request to backend 
+  //httpClient.get request to backend 
   datathatwillcomefromanapi: Bus[] = [
     {
       bus1:
@@ -25,8 +25,8 @@ export class AboutComponent implements OnInit {
             {location:"location142"}
           ],
           drivers:[
-            {drivercontact:9967282154,drivername:"Prabhat"},            
-            {drivercontact:9967282153,drivername:"Heather"}
+            {drivercontact:2104279557,drivername:"Watson"},            
+            {drivercontact:2104279557,drivername:"Heather"}
           ]
         }
     },
@@ -43,8 +43,8 @@ export class AboutComponent implements OnInit {
             {location:"location366"}
           ],
           drivers:[
-            {drivercontact:9967282154,drivername:"Prabhat"},
-            {drivercontact:9967282153,drivername:"Heather"}            
+            {drivercontact:2104279552,drivername:"Watson"},
+            {drivercontact:2104279558,drivername:"Heather"}            
           ]
         }
     }
