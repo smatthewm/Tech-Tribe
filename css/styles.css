@@ -7,4 +7,18 @@ label{
 }
 input {
     float:right;
+    color: orange;
+    font-weight: bold;
+    font-size: 1em;
+}
+h1{
+    color: red;
+}
+td {
+    background-color: aqua;
+}
+body {
+    background: url("https://i.pinimg.com/originals/61/71/a9/6171a9e09c6747861af7a8628e403660.jpg")
+    center center fixed;
+    background-size: cover;
 }
