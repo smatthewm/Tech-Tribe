@@ -42,16 +42,18 @@ app.use(function(err, req, res, next) {
 models.sequelize.sync({}).then(() => {
   
   // Create a test user
- // models.bus.create({
-    //busNumber: 8675309,
-   // driver: 'Busyrich'
-  //}).then(() => {
+  // models.guardian.create({
+    // guardianName: 'Mary Keets',
+    // studentName: 'Ed Keets',
+    // busNumber: 8675309,
+    // driver: 'Busyrich'
+  // }).then(() => {
     //After the user is created,
     //get all the users and log the data returned
-    //models.bus.findAll().then(users => {
-//       console.log(users); //We only added one so we log index 0
-//     });
-//   });
+    // models.driver.findAll().then(users => {
+      //  console.log(users); //We only added one so we log index 0
+    //  });
+  //  });
  });
 
 module.exports = app;
