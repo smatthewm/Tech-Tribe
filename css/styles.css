@@ -1,6 +1,10 @@
-.navbar-nav, .navbar-brand{
+.navbar-nav, .navbar-brand, .navbar-header{
     background-color: darkgreen;
-    color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+}
+ul {
+    color: gold;
 }
 label{
     display: inline-block;
@@ -11,7 +15,8 @@ label{
 }
 input {
     float:right;
-    color: gold;
+    background-color: green;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 1em;
 }
