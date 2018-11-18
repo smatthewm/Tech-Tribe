@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatCheckboxModule,MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,MatToolbarModule, MatMenuModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
 
 
 const appRoutes: Routes = [
@@ -33,6 +33,8 @@ const appRoutes: Routes = [
     MatButtonModule, 
     MatCheckboxModule,
     MatToolbarModule,
+    MatMenuModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
