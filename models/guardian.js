@@ -2,11 +2,29 @@ module.exports = function(sequelize, DataTypes) {
 
 
     return sequelize.define('guardian', {
-      guardianName: {
+      firstName: {
         type: DataTypes.STRING
       },
-      studentName: {
+      lastName: {
         type: DataTypes.STRING
+      },
+      studentFirstName: {
+        type: DataTypes.STRING
+      },
+      studentLastName: {
+        type: DataTypes.STRING
+      },
+      Address: {
+        type: DataTypes.STRING
+      },
+      City: {
+        type: DataTypes.STRING
+      },
+      State: {
+        type: DataTypes.STRING
+      },
+      cellPhone: {
+        type: DataTypes.INTEGER
       },
       busNumber: {
         type: DataTypes.INTEGER

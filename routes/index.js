@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/users', function(req, res, next) {
-  models.bus.findAll({}).then(busAsPlainObject => {
+  models.bus.findAll({include:['roster','busDriver']}).then(busAsPlainObject => {
 
     res.send(busAsPlainObject);
   });
@@ -29,6 +29,30 @@ router.get('/guardian', function(req, res, next) {
   models.guardian.findAll({}).then(guardianAsPlainObject => {
 
     res.send(guardianAsPlainObject);
+  });
+});
+router.post('/guardian', (req, res) => {
+  models.guardian
+  .findOrCreate({
+    where: {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      studentFirstName: req.body.studentFirstName,
+      studentLastName: req.body.studentLastName,
+      address: req.body.address,
+      city: req.body.city,
+      state: req.body.state,
+      cellPhone: req.body.cellPhone
+      // busNumber: req.body.busNumber,
+      // driver: req.body.driver
+    }
+  })
+  .spread(function(result, created) {
+    if (created) {
+      res.redirect('/guardian');
+    } else {
+      res.send('This guardian already exists!');
+    }
   });
 });
 

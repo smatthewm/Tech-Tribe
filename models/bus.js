@@ -1,12 +1,35 @@
 module.exports = function(sequelize, DataTypes) {
 
     //Simple model with a couple fields
-    return sequelize.define('bus', {
+    const Bus = sequelize.define('bus', {
       busNumber: {
         type: DataTypes.INTEGER
-      },
-      driver: {
-        type: DataTypes.STRING
       }
     });
+
+    Bus.associate = db => {
+      Bus.belongsTo(db.driver, {
+        alias: 'busDriver',
+        as: 'busDriver',
+        foreignKey: 'busNumber',
+        targetKey: 'busNumber',
+        timestamps: false,
+        scope: {
+          
+        }
+      });
+      
+      Bus.hasMany(db.student, {
+        alias: 'roster',
+        as: 'roster',
+        foreignKey: 'busNumber',
+        sourceKey: 'busNumber',
+        timestamps: false,
+        scope: {
+          
+        }
+      });
+    };
+
+    return Bus;
   }
