@@ -1,0 +1,25 @@
+  <!-- *ngFor "let item of datathatwillcomefromanapi" -->
+  
+  <table border="2" cellspadding="10" cellspacing="10">
+    <tr>
+      <th> BusNumber </th>
+      <th> First Location </th>
+      <th> Last Location </th>
+      <th>  Locations </th>
+      <th> Book</th>
+      
+    </tr>
+    <tr *ngFor="let bus of buses">  
+      <td > {{bus.busNumber}}</td>
+      <td > {{bus.busNumber}}</td>
+      <td > {{bus.busNumber}}</td>
+      <td > 
+          
+      </td>
+      
+      <td> 
+      <button (click)="bookBus(item.bus1)">Book This </button>  
+      </td>
+    </tr>
+  </table>
+<!-- {{datathatwillcomefromanapi}} -->
