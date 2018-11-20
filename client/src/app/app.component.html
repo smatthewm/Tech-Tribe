@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
   <button mat-button routerLink="/Home" color="accent">Home</button>
-  <button mat-button routerLink="/About" color="accent">About</button>
-  <button mat-button routerLink="/Contact">Contact</button> 
+  <div *ngIf="loggedin">
+  <button mat-button  routerLink="/BUS" color="accent">BUS Booking</button>
+
+  <button mat-button  routerLink="/Forms" (click)="loagout()">Log out</button> 
+</div>
 </mat-toolbar>
 
 <div>
