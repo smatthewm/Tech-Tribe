@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 
 
-    return sequelize.define('student', {
+    const Student = sequelize.define('student', {
       studentName: {
         type: DataTypes.STRING
       },
@@ -10,10 +10,9 @@ module.exports = function(sequelize, DataTypes) {
       },
       busNumber: {
         type: DataTypes.INTEGER
-      },
-      driver: {
-        type: DataTypes.STRING
       }
 
     });
+
+    return Student;
   }

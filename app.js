@@ -46,7 +46,7 @@ app.use(function(err, req, res, next) {
 });
 
 models.sequelize.sync({}).then(() => {
-  
+  models.bus.find({where:{busNumber:8675309},include:['roster','busDriver']}).then(bus => console.log(bus.toJSON()));
   // Create a test user
   // models.guardian.create({
     // guardianName: 'Mary Keets',
