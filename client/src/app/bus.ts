@@ -12,8 +12,9 @@ export class Location {
     location: string;
 }
 export class Driver {
-    drivername: string;
+    driverName: string;
     drivercontact: number;
+ 
 }
 
 // export class MockBus {

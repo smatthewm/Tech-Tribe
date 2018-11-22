@@ -2,9 +2,8 @@
 <div class="card-container" *ngIf="loggedin">
   <div class="card">
     Welcome {{currentuser.studentFirstName +' ' + currentuser.studentLastName}}<br>
-    <a class="btn btn-primary" routerLink="/BUS">bus book</a>
+    <a class="btn btn-primary" routerLink="/BUS"></a>
   </div>
-  
 </div>
 <div class="card-container" *ngIf="!loggedin && !displaylogin && !displayreg">
   <div class="card">

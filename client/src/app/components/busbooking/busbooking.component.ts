@@ -4,20 +4,42 @@ import { Bus
   // , MockBus, MockDriver, MockRoot, MockMappingOfBusDriverRoot 
 } from '../../bus';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-busbooking',
   templateUrl: './busbooking.component.html',
   styleUrls: ['./busbooking.component.css']
 })
-export class BUSBookingComponent implements OnInit {
+export class BUSLocationComponent implements OnInit {
 
   private buses: Bus[] = [];
-
-  constructor(busService: BusService) {
+  private guardians: any;
+  gaurdiandata:any;
+  registerForm: FormGroup;
+  constructor(busService: BusService, private formBuilder: FormBuilder,private router: Router) {
     busService.getBuses().subscribe(buses => {
       this.buses = buses;
     });
+   
+    console.log('heather');
+    busService.getGuardians((data) => {
+      console.log('heather', data);
+    })
+    
   };
+
+  onSubmitForm(){
+  //  busService.addGuardian(req).subscribe(response =>{
+  //    this.gaurdiandata=response;
+  //  })
+  console.log(this.registerForm);
+  this.router.navigate(['/User'])
+
+  
+  }
+  
   // mockbuses: MockBus[] = [
   //   { busId: 1, nusname: "bus1" },
   //   { busId: 2, nusname: "bus2" }
@@ -94,6 +116,16 @@ export class BUSBookingComponent implements OnInit {
   //   }
   // ]
   ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+      Phonenumber: ['', Validators.required, Validators.maxLength(10)],
+      studentFirstName: ['', Validators.required],
+      studentLastName: ['', Validators.required],
+      studentAge: ['', Validators.required],
+      studentGrade: ['', [Validators.required, Validators.email]],
+      studentSchoolName: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
   bookBus(_bus) {
     console.log(_bus);

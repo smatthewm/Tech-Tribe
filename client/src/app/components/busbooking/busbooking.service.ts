@@ -19,4 +19,14 @@ export class BusService {
   getBuses() {
     return this.http.get<Bus[]>(this.baseUrl + '/users');
   }
+
+  addGuardian(req){
+    return this.http.post(this.baseUrl + '/guardian',req);
+  }
+
+  getGuardians(req) {
+    return this.http.get(this.baseUrl+ '/guardian');
+  }
+
 }
+

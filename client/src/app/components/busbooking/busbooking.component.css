@@ -1,0 +1,67 @@
+.card-container{
+    position: relative;
+    left: 29%;
+    top: 181px;
+    }
+.card{ float: left;
+    width: 200px;
+    background-color: darkgrey;
+    margin: 20px;
+    height: 207px;
+    border: 2px solid cadetblue;
+    border-radius: 57px;}
+.card a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    margin: 99px 32px 9px 6px;
+    padding: 66px 84px 68px 53px;
+    position: relative;
+    top: 84px;
+    cursor: pointer;
+    color: white;
+    font-size: xx-large;
+}
+
+.login-card{ float: left;
+    width: 400px;
+    background-color: darkgrey;
+    margin: 20px;
+    height: 207px;
+    border: 2px solid cadetblue;
+    border-radius: 57px;
+}
+    .control-container{
+        margin: 0 auto;
+        }
+        .control-container label{
+            margin: 2px 10px;
+            padding: 2px;
+            width: 186px;
+            display: inline-block;
+        }
+        .control-container input{
+            margin: 2px 10px;
+            padding: 2px;
+        }
+        .control-container button{  
+              margin: 15px 6px 6px 122px;
+            float: left;
+            border: 2px solid aliceblue;
+            padding: 5px 13px;
+            border-radius: 11px;
+        }
+        .register-card{     float: left;
+            width: 400px;
+            background-color: darkgrey;
+            margin: 20px;
+            height: 500px;
+            border: 2px solid cadetblue;
+            border-radius: 57px;
+        }
+        .register-card-container{
+            position: relative;
+            left: 29%;
+            top: 90px;
+
+        }

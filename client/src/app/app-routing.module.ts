@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BUSBookingComponent } from './components/busbooking/busbooking.component';
+import { BUSLocationComponent } from './components/busbooking/busbooking.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/UserComponent/UserComponent.component';
 import { FormsComponent } from './forms/forms.component';
-const routes: Routes = [
+const routes: Routes = [  
   {
     path: '',
     //component: HomeComponent,
@@ -12,10 +12,13 @@ const routes: Routes = [
     children: [
       {
         path: 'BUS',
-        component: BUSBookingComponent
+        component: BUSLocationComponent
       },{
         path: 'Home',
         component: HomeComponent
+      },{
+        path: 'User',
+        component: UserComponent
       }//,
       // {
       //   path: 'User',

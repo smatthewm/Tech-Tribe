@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatButtonModule, MatCheckboxModule,MatToolbarModule} from '@angular/material';
 import { HomeComponent } from './components/home/home.component';
-import { BUSBookingComponent } from './components/busbooking/busbooking.component';
+import { BUSLocationComponent } from './components/busbooking/busbooking.component';
 import { UserComponent } from './components/UserComponent/UserComponent.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'BUSBooking',      component: BUSBookingComponent },
+  { path: 'BUSLocation',      component: BUSLocationComponent },
   { path: 'USER',      component: UserComponent },
   { path: 'forms',      component: FormsComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    BUSBookingComponent,
+    BUSLocationComponent,
     UserComponent,
     PageNotFoundComponent,
     FormsComponent
