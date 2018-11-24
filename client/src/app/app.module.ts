@@ -4,7 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatCheckboxModule,MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,MatToolbarModule, MatMenuModule, MatTableModule, MatHeaderCellDef, MatCellDef} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { BUSLocationComponent } from './components/busbooking/busbooking.component';
 import { UserComponent } from './components/UserComponent/UserComponent.component';
@@ -36,7 +37,14 @@ const appRoutes: Routes = [
     MatButtonModule, 
     MatCheckboxModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
+    MatTableModule,
+    BrowserAnimationsModule
+  ],
+  exports: [
+    MatCellDef,
+    MatHeaderCellDef
   ],
   providers: [],
   bootstrap: [AppComponent]
