@@ -1,0 +1,13 @@
+table{
+    width: 100%;
+    background-color: #FFD800;
+}
+th {
+    color: black;
+    font-size: 1em;
+}
+td {
+    color: black;
+    font-size: 0.9em;
+    cursor: pointer;
+}

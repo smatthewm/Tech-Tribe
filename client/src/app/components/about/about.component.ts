@@ -7,9 +7,13 @@ import { Bus } from '../../bus';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  dataSource;
 
   constructor() { }
   testproperty: string = "welcome to about page";
+
+  displayedColumns: string[] = ['BusNumber', 'StartLocation', 'EndLocation', 'Location'];
+
   // httpClient.get, to request to backend 
   datathatwillcomefromanapi: Bus[] = [
     {
@@ -48,7 +52,9 @@ export class AboutComponent implements OnInit {
           ]
         }
     }
+    
   ]
+
   ngOnInit() {
   }
   bookBus(_bus) {
