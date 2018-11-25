@@ -1,0 +1,13 @@
+.control-container{
+margin: 0 auto;
+}
+.control-container label{
+    margin: 2px 10px;
+    padding: 2px;
+    width: 186px;
+    display: inline-block;
+}
+.control-container input{
+    margin: 2px 10px;
+    padding: 2px;
+}

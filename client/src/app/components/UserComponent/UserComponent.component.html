@@ -1,0 +1,28 @@
+<p>
+data
+</p>
+
+<table border="2" cellspadding="10" cellspacing="10">
+<tr>
+  <th>Bus Id</th>
+  <th>Bus Number</th>
+  <th>Driver Id</th>
+  <th>Driver Name</th>
+  <th>  Id</th>
+  <th> student name</th>
+  <th>guardian Name </th>
+  
+</tr>
+  <tr *ngFor="let item of data">
+    <td>  {{item.id}}</td>
+    <td>  {{item.busNumber}}</td>
+    <td>  {{item.busDriver.id}}</td>
+    <td>  {{item.busDriver.driver}}</td>
+    <td>  {{item.roster[0].id}}</td>
+    <td>  {{item.roster[0].studentName}}</td>
+    <td>  {{item.roster[0].guardianName}}</td>
+    
+    
+  </tr>
+</table>
+

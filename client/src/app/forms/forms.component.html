@@ -1,0 +1,64 @@
+<p>
+  User registration!
+</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group control-container">
+      <label>First Name: </label>
+      <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+      </div>
+  </div>
+  <div class="form-group control-container">
+      <label>Last Name: </label>
+      <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+      </div>
+  </div>
+  <div class="form-group control-container">
+    <label>Phone Number: </label>
+    <input type="text" formControlName="Phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Phonenumber.errors }" />
+    <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+        <div *ngIf="f.Phonenumber.errors.required">Phone number is required</div>
+    </div>
+</div>
+<div class="form-group control-container">
+  <label>Student #1 First Name: </label>
+  <input type="text" formControlName="studentFirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentFirstName.errors }" />
+  <div *ngIf="submitted && f.studentFirstName.errors" class="invalid-feedback">
+      <div *ngIf="f.studentFirstName.errors.required">Student First Name is required</div>
+  </div>
+</div>
+<div class="form-group control-container">
+  <label>Student #1 Last Name: </label>
+  <input type="text" formControlName="studentLastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentLastName.errors }" />
+  <div *ngIf="submitted && f.studentLastName.errors" class="invalid-feedback">
+      <div *ngIf="f.studentLastName.errors.required">Student Last Name is required</div>
+  </div>
+</div>
+<div class="form-group control-container">
+  <label>Student #1 Age: </label>
+  <input type="text" formControlName="studentAge" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentAge.errors }" />
+  <div *ngIf="submitted && f.studentAge.errors" class="invalid-feedback">
+      <div *ngIf="f.studentAge.errors.required">Student Age is required</div>
+  </div>
+</div>
+<div class="form-group control-container">
+  <label>Student #1 Grade: </label>
+  <input type="text" formControlName="studentGrade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentGrade.errors }" />
+  <div *ngIf="submitted && f.studentGrade.errors" class="invalid-feedback">
+      <div *ngIf="f.studentGrade.errors.required">Student Grade is required</div>
+  </div>
+</div>
+<div class="form-group control-container">
+  <label>Student #1 SchoolName: </label>
+  <input type="text" formControlName="studentSchoolName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentSchoolName.errors }" />
+  <div *ngIf="submitted && f.studentSchoolName.errors" class="invalid-feedback">
+      <div *ngIf="f.studentSchoolName.errors.required">Student Last Name is required</div>
+  </div>
+</div>
+  <div class="form-group control-container">
+      <button [disabled]="loading" class="btn btn-primary">Register</button>
+  </div>
+</form>

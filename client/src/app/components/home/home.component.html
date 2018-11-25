@@ -1,3 +1,121 @@
-<p>
-  home works!
-</p>
+<!-- <h1>Response Data: {{responseData}}</h1> -->
+<div class="card-container" *ngIf="loggedin">
+  <div class="card">
+    Welcome {{currentuser.studentFirstName +' ' + currentuser.studentLastName}}<br>
+    <a class="btn btn-primary" routerLink="/BUS"></a>
+  </div>
+</div>
+<div class="card-container" *ngIf="!loggedin && !displaylogin && !displayreg">
+  <div class="card">
+    <a class="btn btn-primary" (click)="displayloginreg(true)">Login</a>
+
+  </div>
+  <div class="card" >
+    <a class="btn btn-primary" (click)="displayloginreg(false)">Register</a>
+  </div>
+</div>
+<div class="card-container" *ngIf="displaylogin">
+  <div class="login-card">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" style="top: 18px;position: relative;left: 74px;">
+      <div class="form-group control-container">
+          <label>User Name: </label>
+          <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginformload.UserName.errors }" />
+          <div *ngIf="submitted && loginformload.UserName.errors" class="invalid-feedback">
+              <div *ngIf="loginformload.UserName.errors.required">User Name is required</div>
+          </div>
+      </div>
+      <div class="form-group control-container">
+          <label>PassWord : </label>
+          <input type="password" formControlName="PassWord" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginformload.PassWord.errors }" />
+          <div *ngIf="submitted && loginformload.PassWord.errors" class="invalid-feedback">
+              <div *ngIf="loginformload.PassWord.errors.required">Password is required</div>
+          </div>
+      </div>
+     
+      <div class="form-group control-container">
+          <button [disabled]="loading" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="register-card-container" *ngIf="displayreg">
+  <div class="register-card">
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="top: 18px;position: relative;left: 74px;">
+      <div class="form-group control-container">
+          <label>User Name: </label>
+          <input type="text" formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" />
+          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+              <div *ngIf="f.userName.errors.required">User Name is required</div>
+          </div>
+      </div>
+      <div class="form-group control-container">
+          <label>Password: </label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">password is required</div>
+          </div>
+      </div>
+      <div class="form-group control-container">
+        <label>Phone Number: </label>
+        <input type="text" formControlName="Phonenumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Phonenumber.errors }" />
+        <div *ngIf="submitted && f.Phonenumber.errors" class="invalid-feedback">
+            <div *ngIf="f.Phonenumber.errors.required">Phone number is required</div>
+        </div>
+    </div>
+    <div class="form-group control-container">
+      <label>Student #1 First Name: </label>
+      <input type="text" formControlName="studentFirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentFirstName.errors }" />
+      <div *ngIf="submitted && f.studentFirstName.errors" class="invalid-feedback">
+          <div *ngIf="f.studentFirstName.errors.required">Student First Name is required</div>
+      </div>
+    </div>
+    <div class="form-group control-container">
+      <label>Student #1 Last Name: </label>
+      <input type="text" formControlName="studentLastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentLastName.errors }" />
+      <div *ngIf="submitted && f.studentLastName.errors" class="invalid-feedback">
+          <div *ngIf="f.studentLastName.errors.required">Student Last Name is required</div>
+      </div>
+    </div>
+    <div class="form-group control-container">
+      <label>Student #1 Age: </label>
+      <input type="text" formControlName="studentAge" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentAge.errors }" />
+      <div *ngIf="submitted && f.studentAge.errors" class="invalid-feedback">
+          <div *ngIf="f.studentAge.errors.required">Student Age is required</div>
+      </div>
+    </div>
+    <div class="form-group control-container">
+      <label>Student #1 Grade: </label>
+      <input type="text" formControlName="studentGrade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentGrade.errors }" />
+      <div *ngIf="submitted && f.studentGrade.errors" class="invalid-feedback">
+          <div *ngIf="f.studentGrade.errors.required">Student Grade is required</div>
+      </div>
+    </div>
+    <div class="form-group control-container">
+      <label>Student #1 SchoolName: </label>
+      <input type="text" formControlName="studentSchoolName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.studentSchoolName.errors }" />
+      <div *ngIf="submitted && f.studentSchoolName.errors" class="invalid-feedback">
+          <div *ngIf="f.studentSchoolName.errors.required">Student Last Name is required</div>
+      </div>
+    </div>
+      <div class="form-group control-container">
+          <button [disabled]="loading" class="btn btn-primary">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <table>
+  <th><tr>Bus Number</tr></th>
+  <th><tr>Driver Name</tr></th>
+  <tr *ngFor="let response of data">
+    <td>{{response.busNumber}}
+
+    </td>
+    <td>
+      {{response.driver}}
+    </td>
+   
+  </tr>
+</table> -->

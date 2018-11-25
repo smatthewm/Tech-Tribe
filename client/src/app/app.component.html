@@ -1,16 +1,22 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <button mat-button routerLink="/Home" color="accent">Home</button>
+  <div *ngIf="loggedin">
+  <button mat-button  routerLink="/BUS" color="accent">BUS Booking</button>
+
+  <button mat-button  routerLink="/Forms" (click)="loagout()">Log out</button> 
+</div>
+</mat-toolbar>
   <button mat-button routerLink="/About" color="accent">About</button>
   <button mat-button routerLink="/Contact">Contact</button> 
-</mat-toolbar>
+</mat-toolbar> -->
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/Home">Home</button>
+  <button mat-menu-item routerLink="/About">About</button>
+  <button mat-menu-item routerLink="/Contact">Contact</button>
+</mat-menu>
 
 <div>
 <router-outlet></router-outlet>
 </div>
-
-
-
-
-
-
-
